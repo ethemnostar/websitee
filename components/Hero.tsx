@@ -13,140 +13,123 @@ export default function Hero() {
         setTimeout(() => {
           (node as HTMLElement).style.opacity = "1";
           (node as HTMLElement).style.transform = "translateY(0)";
-        }, i * 120);
+        }, i * 130);
       });
-    }, 100);
+    }, 80);
   }, []);
 
   return (
-    <section id="hero" style={{ minHeight: "100vh", display: "flex", alignItems: "center", position: "relative", overflow: "hidden", paddingTop: 72 }} ref={ref}>
-      {/* Background geometric grid */}
+    <section id="hero" style={{ minHeight: "100vh", display: "flex", alignItems: "center", position: "relative", overflow: "hidden", paddingTop: 68 }} ref={ref}>
+      
+      {/* Background — warm subtle gradient + dot grid */}
       <div style={{ position: "absolute", inset: 0, zIndex: 0, pointerEvents: "none" }}>
-        <svg width="100%" height="100%" style={{ opacity: 0.04 }}>
+        {/* Soft warm gradient top-right */}
+        <div style={{ position: "absolute", top: "-10%", right: "-5%", width: 600, height: 600, borderRadius: "50%", background: "radial-gradient(circle, rgba(180,83,9,0.06) 0%, transparent 65%)" }} />
+        {/* Warm glow bottom-left */}
+        <div style={{ position: "absolute", bottom: "5%", left: "-5%", width: 400, height: 400, borderRadius: "50%", background: "radial-gradient(circle, rgba(217,119,6,0.05) 0%, transparent 65%)" }} />
+        {/* Dot grid */}
+        <svg width="100%" height="100%" style={{ opacity: 0.35 }}>
           <defs>
-            <pattern id="grid" width="60" height="60" patternUnits="userSpaceOnUse">
-              <path d="M 60 0 L 0 0 0 60" fill="none" stroke="currentColor" strokeWidth="0.5" />
+            <pattern id="dots" width="28" height="28" patternUnits="userSpaceOnUse">
+              <circle cx="1" cy="1" r="1" fill="var(--border)" />
             </pattern>
           </defs>
-          <rect width="100%" height="100%" fill="url(#grid)" />
+          <rect width="100%" height="100%" fill="url(#dots)" />
         </svg>
-        {/* Accent orb */}
-        <div style={{ position: "absolute", top: "20%", right: "10%", width: 400, height: 400, borderRadius: "50%", background: "radial-gradient(circle, var(--accent-dim) 0%, transparent 70%)", filter: "blur(40px)" }} />
-        <div style={{ position: "absolute", bottom: "10%", left: "5%", width: 280, height: 280, borderRadius: "50%", background: "radial-gradient(circle, var(--accent-dim) 0%, transparent 70%)", filter: "blur(60px)" }} />
       </div>
 
-      <div style={{ maxWidth: 1200, margin: "0 auto", padding: "0 32px", width: "100%", position: "relative", zIndex: 1 }}>
-        <div style={{ display: "grid", gridTemplateColumns: "1fr auto", gap: 48, alignItems: "center" }}>
-          {/* Left content */}
-          <div>
-            {/* Tag */}
-            <div className="hero-reveal" style={{ opacity: 0, transform: "translateY(20px)", transition: "all 0.6s ease", display: "flex", alignItems: "center", gap: 12, marginBottom: 32 }}>
-              <div className="badge">Senior Product Manager</div>
-              <div style={{ display: "flex", alignItems: "center", gap: 4, color: "var(--text-muted)", fontSize: 13 }}>
-                <MapPin size={12} />
-                <span>Ditzingen, Germany</span>
-              </div>
-            </div>
+      <div style={{ maxWidth: 1200, margin: "0 auto", padding: "60px 40px", width: "100%", position: "relative", zIndex: 1 }}>
+        
+        {/* Eyebrow */}
+        <div className="hero-reveal" style={{ opacity: 0, transform: "translateY(20px)", transition: "all 0.7s cubic-bezier(0.16,1,0.3,1)", display: "flex", alignItems: "center", gap: 14, marginBottom: 28, flexWrap: "wrap" }}>
+          <span className="badge">Senior Product Manager</span>
+          <span style={{ fontSize: 13, color: "var(--text-muted)", display: "flex", alignItems: "center", gap: 5 }}>
+            <MapPin size={12} /> Ditzingen, Germany
+          </span>
+          <span style={{ fontSize: 13, color: "var(--text-muted)" }}>· 15+ years experience</span>
+        </div>
 
-            {/* Name */}
-            <div className="hero-reveal font-display" style={{ opacity: 0, transform: "translateY(20px)", transition: "all 0.6s ease", marginBottom: 8 }}>
-              <div style={{ fontSize: "clamp(52px, 8vw, 96px)", fontWeight: 300, lineHeight: 1.0, letterSpacing: "-0.03em", color: "var(--text-primary)" }}>
-                Ethem
-              </div>
-              <div style={{ fontSize: "clamp(52px, 8vw, 96px)", fontWeight: 600, lineHeight: 1.0, letterSpacing: "-0.03em" }}>
-                <span className="gradient-text">Nostar</span>
-              </div>
-            </div>
+        {/* Headline */}
+        <div className="hero-reveal font-display" style={{ opacity: 0, transform: "translateY(20px)", transition: "all 0.7s cubic-bezier(0.16,1,0.3,1)", marginBottom: 28 }}>
+          <h1 style={{ fontSize: "clamp(48px, 7.5vw, 88px)", fontWeight: 400, lineHeight: 1.0, letterSpacing: "-0.03em", color: "var(--text-primary)" }}>
+            Ethem Nostar
+          </h1>
+          <h2 style={{ fontSize: "clamp(48px, 7.5vw, 88px)", fontWeight: 700, lineHeight: 1.05, letterSpacing: "-0.03em" }}>
+            <span className="gradient-text">Product Leader.</span>
+          </h2>
+        </div>
 
-            {/* Tagline */}
-            <div className="hero-reveal" style={{ opacity: 0, transform: "translateY(20px)", transition: "all 0.6s ease", marginTop: 28, marginBottom: 40, maxWidth: 560 }}>
-              <p style={{ fontSize: 18, lineHeight: 1.7, color: "var(--text-secondary)", fontWeight: 300 }}>
-                Driving product strategy and commercial model design for enterprise SaaS — turning complex B2B challenges into scalable, user-centric solutions.
-              </p>
-            </div>
+        {/* Description */}
+        <div className="hero-reveal" style={{ opacity: 0, transform: "translateY(20px)", transition: "all 0.7s cubic-bezier(0.16,1,0.3,1)", marginBottom: 44, maxWidth: 580 }}>
+          <p style={{ fontSize: 17.5, lineHeight: 1.75, color: "var(--text-secondary)", fontWeight: 300 }}>
+            Driving B2B SaaS product strategy, pricing & packaging design, and enterprise platform transformation at TeamViewer — with a track record across software, telecom, banking, and aviation.
+          </p>
+        </div>
 
-            {/* Stats */}
-            <div className="hero-reveal" style={{ opacity: 0, transform: "translateY(20px)", transition: "all 0.6s ease", display: "flex", gap: 40, marginBottom: 48 }}>
-              {[
-                { num: "15+", label: "Years Experience" },
-                { num: "4", label: "Industries" },
-                { num: "3+", label: "Countries" },
-              ].map(s => (
-                <div key={s.label}>
-                  <div className="font-display" style={{ fontSize: 36, fontWeight: 600, color: "var(--accent)", lineHeight: 1 }}>{s.num}</div>
-                  <div style={{ fontSize: 12, color: "var(--text-muted)", letterSpacing: "0.06em", textTransform: "uppercase", marginTop: 4 }}>{s.label}</div>
-                </div>
-              ))}
+        {/* Stats row */}
+        <div className="hero-reveal" style={{ opacity: 0, transform: "translateY(20px)", transition: "all 0.7s cubic-bezier(0.16,1,0.3,1)", display: "flex", gap: 0, marginBottom: 48, borderLeft: "2px solid var(--accent)", paddingLeft: 24 }}>
+          {[
+            { num: "15+", label: "Years Experience" },
+            { num: "4", label: "Industries" },
+            { num: "6+", label: "Companies" },
+          ].map((s, i) => (
+            <div key={s.label} style={{ paddingRight: 40, borderRight: i < 2 ? "1px solid var(--border)" : "none", marginRight: i < 2 ? 40 : 0 }}>
+              <div className="font-display" style={{ fontSize: 38, fontWeight: 700, color: "var(--accent)", lineHeight: 1 }}>{s.num}</div>
+              <div style={{ fontSize: 12, color: "var(--text-muted)", letterSpacing: "0.07em", textTransform: "uppercase", marginTop: 5 }}>{s.label}</div>
             </div>
+          ))}
+        </div>
 
-            {/* CTA row */}
-            <div className="hero-reveal" style={{ opacity: 0, transform: "translateY(20px)", transition: "all 0.6s ease", display: "flex", alignItems: "center", gap: 16, flexWrap: "wrap" }}>
-              <a href="#contact" style={{ background: "var(--accent)", color: "#fff", padding: "14px 32px", borderRadius: 10, fontWeight: 600, textDecoration: "none", fontSize: 14, letterSpacing: "0.02em", transition: "opacity 0.2s" }}
-                onMouseEnter={e => (e.currentTarget.style.opacity = "0.85")}
-                onMouseLeave={e => (e.currentTarget.style.opacity = "1")}>
-                Get In Touch
+        {/* CTA */}
+        <div className="hero-reveal" style={{ opacity: 0, transform: "translateY(20px)", transition: "all 0.7s cubic-bezier(0.16,1,0.3,1)", display: "flex", alignItems: "center", gap: 12, flexWrap: "wrap" }}>
+          <a href="#contact" style={{ background: "var(--accent)", color: "#fff", padding: "13px 30px", borderRadius: 9, fontWeight: 600, textDecoration: "none", fontSize: 14, boxShadow: "var(--shadow-sm)", transition: "background 0.2s" }}
+            onMouseEnter={e => (e.currentTarget.style.background = "var(--accent-hover)")}
+            onMouseLeave={e => (e.currentTarget.style.background = "var(--accent)")}>
+            Get In Touch
+          </a>
+          <a href="#experience" style={{ background: "var(--surface)", color: "var(--text-primary)", padding: "13px 30px", borderRadius: 9, fontWeight: 500, textDecoration: "none", fontSize: 14, border: "1px solid var(--border)", boxShadow: "var(--shadow-sm)", transition: "border-color 0.2s" }}
+            onMouseEnter={e => (e.currentTarget.style.borderColor = "var(--accent)")}
+            onMouseLeave={e => (e.currentTarget.style.borderColor = "var(--border)")}>
+            View Experience
+          </a>
+          <div style={{ display: "flex", gap: 8 }}>
+            {[
+              { icon: <ExternalLink size={15} />, href: "https://linkedin.com/in/ethemnostar" },
+              { icon: <Mail size={15} />, href: "mailto:ethemnostar@gmail.com" },
+            ].map((btn, i) => (
+              <a key={i} href={btn.href} target={btn.href.startsWith("http") ? "_blank" : undefined} rel="noopener noreferrer"
+                style={{ width: 42, height: 42, borderRadius: 9, border: "1px solid var(--border)", background: "var(--surface)", display: "flex", alignItems: "center", justifyContent: "center", color: "var(--text-muted)", textDecoration: "none", boxShadow: "var(--shadow-sm)", transition: "all 0.2s" }}
+                onMouseEnter={e => { (e.currentTarget as HTMLElement).style.borderColor = "var(--accent)"; (e.currentTarget as HTMLElement).style.color = "var(--accent)"; }}
+                onMouseLeave={e => { (e.currentTarget as HTMLElement).style.borderColor = "var(--border)"; (e.currentTarget as HTMLElement).style.color = "var(--text-muted)"; }}>
+                {btn.icon}
               </a>
-              <a href="#experience" style={{ background: "transparent", color: "var(--text-primary)", padding: "14px 32px", borderRadius: 10, fontWeight: 500, textDecoration: "none", fontSize: 14, border: "1px solid var(--border)", transition: "border-color 0.2s" }}
-                onMouseEnter={e => (e.currentTarget.style.borderColor = "var(--accent)")}
-                onMouseLeave={e => (e.currentTarget.style.borderColor = "var(--border)")}>
-                View Experience
-              </a>
-              <div style={{ display: "flex", gap: 12, marginLeft: 8 }}>
-                <a href="https://linkedin.com/in/ethemnostar" target="_blank" rel="noopener noreferrer"
-                  style={{ width: 40, height: 40, borderRadius: 10, border: "1px solid var(--border)", display: "flex", alignItems: "center", justifyContent: "center", color: "var(--text-muted)", textDecoration: "none", transition: "all 0.2s" }}
-                  onMouseEnter={e => { e.currentTarget.style.borderColor = "var(--accent)"; e.currentTarget.style.color = "var(--accent)"; }}
-                  onMouseLeave={e => { e.currentTarget.style.borderColor = "var(--border)"; e.currentTarget.style.color = "var(--text-muted)"; }}>
-                  <ExternalLink size={16} />
-                </a>
-                <a href="mailto:ethemnostar@gmail.com"
-                  style={{ width: 40, height: 40, borderRadius: 10, border: "1px solid var(--border)", display: "flex", alignItems: "center", justifyContent: "center", color: "var(--text-muted)", textDecoration: "none", transition: "all 0.2s" }}
-                  onMouseEnter={e => { e.currentTarget.style.borderColor = "var(--accent)"; e.currentTarget.style.color = "var(--accent)"; }}
-                  onMouseLeave={e => { e.currentTarget.style.borderColor = "var(--border)"; e.currentTarget.style.color = "var(--text-muted)"; }}>
-                  <Mail size={16} />
-                </a>
-              </div>
-            </div>
-          </div>
-
-          {/* Right — decorative card */}
-          <div className="hero-reveal" style={{ opacity: 0, transform: "translateY(20px)", transition: "all 0.6s ease" }}>
-            <div style={{ width: 260, background: "var(--surface)", border: "1px solid var(--border)", borderRadius: 16, padding: 24, position: "relative" }}>
-              <div style={{ fontSize: 11, letterSpacing: "0.12em", textTransform: "uppercase", color: "var(--text-muted)", marginBottom: 16 }}>Current Role</div>
-              <div style={{ display: "flex", alignItems: "center", gap: 12, marginBottom: 20 }}>
-                <div style={{ width: 40, height: 40, borderRadius: 10, background: "var(--accent-dim)", border: "1px solid var(--accent-border)", display: "flex", alignItems: "center", justifyContent: "center" }}>
-                  <span style={{ fontSize: 18 }}>📡</span>
-                </div>
-                <div>
-                  <div style={{ fontSize: 14, fontWeight: 600, color: "var(--text-primary)" }}>TeamViewer</div>
-                  <div style={{ fontSize: 12, color: "var(--text-muted)" }}>Göppingen, DE</div>
-                </div>
-              </div>
-              <div style={{ fontSize: 13, fontWeight: 600, color: "var(--text-primary)", marginBottom: 4 }}>Sr. Product Manager</div>
-              <div style={{ fontSize: 12, color: "var(--text-secondary)", marginBottom: 16 }}>Remote Management Suite</div>
-              <div style={{ height: 1, background: "var(--border)", marginBottom: 16 }} />
-              <div style={{ display: "flex", gap: 6, flexWrap: "wrap" }}>
-                {["B2B SaaS", "Pricing", "RMM"].map(t => (
-                  <span key={t} className="badge" style={{ fontSize: 10, padding: "3px 8px" }}>{t}</span>
-                ))}
-              </div>
-              {/* Live dot */}
-              <div style={{ position: "absolute", top: 20, right: 20, display: "flex", alignItems: "center", gap: 6 }}>
-                <div style={{ width: 7, height: 7, borderRadius: "50%", background: "#22c55e", boxShadow: "0 0 0 2px rgba(34,197,94,0.2)", animation: "pulse 2s infinite" }} />
-                <span style={{ fontSize: 10, color: "var(--text-muted)" }}>Open to opportunities</span>
-              </div>
-            </div>
-            <style>{`@keyframes pulse { 0%,100% { opacity:1 } 50% { opacity:0.5 } }`}</style>
+            ))}
           </div>
         </div>
 
-        {/* Scroll indicator */}
-        <div style={{ marginTop: 80, display: "flex", justifyContent: "center" }}>
-          <a href="#about" style={{ display: "flex", flexDirection: "column", alignItems: "center", gap: 8, textDecoration: "none", color: "var(--text-muted)", fontSize: 11, letterSpacing: "0.1em", textTransform: "uppercase", animation: "bounce 2s infinite" }}>
+        {/* Current role card — bottom right corner */}
+        <div className="hero-reveal" style={{ opacity: 0, transform: "translateY(20px)", transition: "all 0.7s cubic-bezier(0.16,1,0.3,1)", position: "absolute", right: 40, bottom: 40 }}>
+          <div style={{ background: "var(--surface)", border: "1px solid var(--border)", borderRadius: 14, padding: "20px 24px", boxShadow: "var(--shadow-md)", minWidth: 230 }}>
+            <div style={{ fontSize: 10, letterSpacing: "0.12em", textTransform: "uppercase", color: "var(--text-muted)", marginBottom: 12 }}>Current Role</div>
+            <div style={{ display: "flex", alignItems: "center", gap: 10, marginBottom: 14 }}>
+              <div style={{ width: 36, height: 36, borderRadius: 9, background: "var(--accent-dim)", border: "1px solid var(--accent-border)", display: "flex", alignItems: "center", justifyContent: "center", fontSize: 16 }}>📡</div>
+              <div>
+                <div style={{ fontSize: 13, fontWeight: 700, color: "var(--text-primary)" }}>TeamViewer</div>
+                <div style={{ fontSize: 11, color: "var(--text-muted)" }}>since Jan 2023</div>
+              </div>
+            </div>
+            <div style={{ fontSize: 12, color: "var(--text-secondary)", lineHeight: 1.4 }}>Sr. PM — Remote Management</div>
+          </div>
+        </div>
+
+        {/* Scroll hint */}
+        <div style={{ marginTop: 72, display: "flex", justifyContent: "center" }}>
+          <a href="#about" style={{ display: "flex", flexDirection: "column", alignItems: "center", gap: 7, textDecoration: "none", color: "var(--text-muted)", fontSize: 10.5, letterSpacing: "0.12em", textTransform: "uppercase", animation: "scrollBounce 2.5s ease-in-out infinite" }}>
             <span>Scroll</span>
-            <ArrowDown size={16} />
+            <ArrowDown size={14} />
           </a>
         </div>
-        <style>{`@keyframes bounce { 0%,100%{transform:translateY(0)} 50%{transform:translateY(6px)} }`}</style>
+        <style>{`@keyframes scrollBounce { 0%,100%{transform:translateY(0);opacity:0.6} 50%{transform:translateY(5px);opacity:1} }`}</style>
       </div>
     </section>
   );

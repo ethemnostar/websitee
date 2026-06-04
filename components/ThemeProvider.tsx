@@ -7,11 +7,11 @@ const ThemeContext = createContext<{ theme: string; toggle: () => void }>({
 });
 
 export function ThemeProvider({ children }: { children: React.ReactNode }) {
-  const [theme, setTheme] = useState("dark");
+  const [theme, setTheme] = useState("light");
   const [mounted, setMounted] = useState(false);
 
   useEffect(() => {
-    const saved = localStorage.getItem("theme") || "dark";
+    const saved = localStorage.getItem("theme") || "light";
     setTheme(saved);
     document.documentElement.classList.toggle("dark", saved === "dark");
     setMounted(true);

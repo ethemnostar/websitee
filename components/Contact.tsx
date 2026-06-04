@@ -1,7 +1,7 @@
 "use client";
 import { useState } from "react";
 import { useReveal } from "@/hooks/useReveal";
-import { Mail, ExternalLink, MapPin, Phone, Send } from "lucide-react";
+import { Mail, ExternalLink, MapPin, Send } from "lucide-react";
 
 export default function Contact() {
   const ref = useReveal();
@@ -38,7 +38,6 @@ export default function Contact() {
               <h3 style={{ fontSize: 16, fontWeight: 700, color: "var(--text-primary)", marginBottom: 24 }}>Get in touch</h3>
               {[
                 { icon: <Mail size={16} />, label: "Email", value: "ethemnostar@gmail.com", href: "mailto:ethemnostar@gmail.com" },
-                { icon: <Phone size={16} />, label: "Phone", value: "+49 176 28950080", href: "tel:+4917628950080" },
                 { icon: <MapPin size={16} />, label: "Location", value: "Ditzingen, Germany", href: null },
                 { icon: <ExternalLink size={16} />, label: "LinkedIn", value: "linkedin.com/in/ethemnostar", href: "https://linkedin.com/in/ethemnostar" },
               ].map((c, i) => (
@@ -62,16 +61,6 @@ export default function Contact() {
               ))}
             </div>
 
-            {/* Availability card */}
-            <div style={{ background: "var(--accent-dim)", border: "1px solid var(--accent-border)", borderRadius: 16, padding: 24 }}>
-              <div style={{ display: "flex", gap: 10, alignItems: "center", marginBottom: 10 }}>
-                <div style={{ width: 8, height: 8, borderRadius: "50%", background: "#22c55e" }} />
-                <span style={{ fontSize: 13, fontWeight: 600, color: "var(--text-primary)" }}>Open to opportunities</span>
-              </div>
-              <p style={{ fontSize: 13, color: "var(--text-secondary)", lineHeight: 1.6 }}>
-                Actively exploring senior PM and Head of Product roles in B2B SaaS. Flexible on location (hybrid/remote).
-              </p>
-            </div>
           </div>
 
           {/* Right form */}
