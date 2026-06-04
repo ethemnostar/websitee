@@ -44,18 +44,18 @@ export default function Hero() {
         <div className="hero-reveal" style={{ opacity: 0, transform: "translateY(20px)", transition: "all 0.7s cubic-bezier(0.16,1,0.3,1)", display: "flex", alignItems: "center", gap: 14, marginBottom: 28, flexWrap: "wrap" }}>
           <span className="badge">Senior Product Manager</span>
           <span style={{ fontSize: 13, color: "var(--text-muted)", display: "flex", alignItems: "center", gap: 5 }}>
-            <MapPin size={12} /> Ditzingen, Germany
+            <MapPin size={12} /> Stuttgart, Germany
           </span>
           <span style={{ fontSize: 13, color: "var(--text-muted)" }}>· 15+ years experience</span>
         </div>
 
         {/* Headline */}
         <div className="hero-reveal font-display" style={{ opacity: 0, transform: "translateY(20px)", transition: "all 0.7s cubic-bezier(0.16,1,0.3,1)", marginBottom: 28 }}>
-          <h1 style={{ fontSize: "clamp(48px, 7.5vw, 88px)", fontWeight: 400, lineHeight: 1.0, letterSpacing: "-0.03em", color: "var(--text-primary)" }}>
+          <h1 style={{ fontSize: "clamp(48px, 7.5vw, 88px)", fontWeight: 700, lineHeight: 1.0, letterSpacing: "-0.03em", color: "var(--text-primary)" }}>
             Ethem Nostar
           </h1>
-          <h2 style={{ fontSize: "clamp(48px, 7.5vw, 88px)", fontWeight: 700, lineHeight: 1.05, letterSpacing: "-0.03em" }}>
-            <span className="gradient-text">Product Leader.</span>
+          <h2 style={{ fontSize: "clamp(22px, 3.2vw, 38px)", fontWeight: 400, lineHeight: 1.4, letterSpacing: "-0.01em", color: "var(--text-secondary)", marginTop: 10 }}>
+            Senior Product Manager
           </h2>
         </div>
 

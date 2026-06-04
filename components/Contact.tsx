@@ -11,7 +11,12 @@ export default function Contact() {
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     setStatus("sending");
-    setTimeout(() => setStatus("sent"), 1500);
+    const subject = encodeURIComponent(`[Portfolio] ${form.subject || "New message"}`);
+    const body = encodeURIComponent(
+      `Name: ${form.name}\nEmail: ${form.email}\n\n${form.message}`
+    );
+    window.location.href = `mailto:ethemnostar@gmail.com?subject=${subject}&body=${body}`;
+    setTimeout(() => setStatus("sent"), 800);
   };
 
   return (
@@ -38,7 +43,7 @@ export default function Contact() {
               <h3 style={{ fontSize: 16, fontWeight: 700, color: "var(--text-primary)", marginBottom: 24 }}>Get in touch</h3>
               {[
                 { icon: <Mail size={16} />, label: "Email", value: "ethemnostar@gmail.com", href: "mailto:ethemnostar@gmail.com" },
-                { icon: <MapPin size={16} />, label: "Location", value: "Ditzingen, Germany", href: null },
+                { icon: <MapPin size={16} />, label: "Location", value: "Stuttgart, Germany", href: null },
                 { icon: <ExternalLink size={16} />, label: "LinkedIn", value: "linkedin.com/in/ethemnostar", href: "https://linkedin.com/in/ethemnostar" },
               ].map((c, i) => (
                 <div key={i} style={{ display: "flex", gap: 16, alignItems: "center", marginBottom: 20 }}>

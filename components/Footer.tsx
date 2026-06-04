@@ -9,7 +9,7 @@ export default function Footer() {
           <div className="font-display" style={{ fontSize: 22, fontWeight: 600, color: "var(--text-primary)", marginBottom: 4 }}>
             EN<span style={{ color: "var(--accent)" }}>.</span>
           </div>
-          <div style={{ fontSize: 13, color: "var(--text-muted)" }}>Senior Product Manager — Ditzingen, Germany</div>
+          <div style={{ fontSize: 13, color: "var(--text-muted)" }}>Senior Product Manager — Stuttgart, Germany</div>
         </div>
         <div style={{ display: "flex", gap: 16 }}>
           {[
