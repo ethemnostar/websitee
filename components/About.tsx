@@ -7,7 +7,7 @@ export default function About() {
   return (
     <section id="about" style={{ padding: "120px 32px", background: "var(--bg-secondary)" }} ref={ref}>
       <div style={{ maxWidth: 1200, margin: "0 auto" }}>
-        <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 80, alignItems: "center" }}>
+        <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 80, alignItems: "center" }} className="about-grid">
           {/* Left */}
           <div className="reveal">
             <div style={{ display: "flex", alignItems: "center", gap: 12, marginBottom: 24 }}>
@@ -35,7 +35,7 @@ export default function About() {
           </div>
 
           {/* Right — fact cards */}
-          <div className="reveal" style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 16 }}>
+          <div className="reveal about-cards" style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 16 }}>
             {[
               { icon: "🎯", title: "Product Strategy", desc: "Vision-to-execution across complex B2B SaaS platforms" },
               { icon: "💰", title: "Pricing & Packaging", desc: "Commercial model design with price sensitivity analysis" },

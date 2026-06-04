@@ -36,7 +36,7 @@ export default function Contact() {
           </p>
         </div>
 
-        <div className="reveal" style={{ display: "grid", gridTemplateColumns: "1fr 1.5fr", gap: 48, alignItems: "start" }}>
+        <div className="reveal contact-grid" style={{ display: "grid", gridTemplateColumns: "1fr 1.5fr", gap: 48, alignItems: "start" }}>
           {/* Left info */}
           <div>
             <div className="card" style={{ borderRadius: 16, padding: 32, marginBottom: 24 }}>
@@ -78,7 +78,7 @@ export default function Contact() {
               </div>
             ) : (
               <form onSubmit={handleSubmit}>
-                <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 16, marginBottom: 16 }}>
+                <div className="form-row" style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 16, marginBottom: 16 }}>
                   {[
                     { id: "name", label: "Your Name", placeholder: "John Smith", type: "text" },
                     { id: "email", label: "Email Address", placeholder: "john@company.com", type: "email" },

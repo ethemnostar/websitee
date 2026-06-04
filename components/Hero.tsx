@@ -39,6 +39,14 @@ export default function Hero() {
       </div>
 
       <div style={{ maxWidth: 1200, margin: "0 auto", padding: "60px 40px", width: "100%", position: "relative", zIndex: 1 }}>
+        <style>{`
+          @keyframes scrollBounce { 0%,100%{transform:translateY(0);opacity:0.6} 50%{transform:translateY(5px);opacity:1} }
+          @media (max-width: 768px) {
+            #hero { padding-top: 68px; }
+            #hero .hero-card { display: none !important; }
+            #hero > div > div:first-child { padding: 40px 20px 20px !important; }
+          }
+        `}</style>
         
         {/* Eyebrow */}
         <div className="hero-reveal" style={{ opacity: 0, transform: "translateY(20px)", transition: "all 0.7s cubic-bezier(0.16,1,0.3,1)", display: "flex", alignItems: "center", gap: 14, marginBottom: 28, flexWrap: "wrap" }}>
@@ -108,7 +116,7 @@ export default function Hero() {
         </div>
 
         {/* Current role card — bottom right corner */}
-        <div className="hero-reveal" style={{ opacity: 0, transform: "translateY(20px)", transition: "all 0.7s cubic-bezier(0.16,1,0.3,1)", position: "absolute", right: 40, bottom: 40 }}>
+        <div className="hero-reveal hero-card" style={{ opacity: 0, transform: "translateY(20px)", transition: "all 0.7s cubic-bezier(0.16,1,0.3,1)", position: "absolute", right: 40, bottom: 40 }}>
           <div style={{ background: "var(--surface)", border: "1px solid var(--border)", borderRadius: 14, padding: "20px 24px", boxShadow: "var(--shadow-md)", minWidth: 230 }}>
             <div style={{ fontSize: 10, letterSpacing: "0.12em", textTransform: "uppercase", color: "var(--text-muted)", marginBottom: 12 }}>Current Role</div>
             <div style={{ display: "flex", alignItems: "center", gap: 10, marginBottom: 14 }}>

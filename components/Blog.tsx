@@ -147,8 +147,7 @@ export default function Blog() {
         <div className="reveal" style={{ marginBottom: 24 }}>
           <div
             onClick={() => setActivePost(posts[0])}
-            className="card"
-            style={{ borderRadius: 16, padding: 40, cursor: "pointer", display: "grid", gridTemplateColumns: "1fr auto", gap: 32, alignItems: "center" }}
+            className="card blog-featured" style={{ borderRadius: 16, padding: 40, cursor: "pointer", display: "grid", gridTemplateColumns: "1fr auto", gap: 32, alignItems: "center" }}
           >
             <div>
               <div style={{ display: "flex", gap: 10, alignItems: "center", marginBottom: 16 }}>
@@ -166,12 +165,12 @@ export default function Blog() {
                 Read article <ArrowUpRight size={14} />
               </span>
             </div>
-            <div style={{ fontSize: 64, opacity: 0.25 }}>{posts[0].emoji}</div>
+            <div className="blog-emoji" style={{ fontSize: 64, opacity: 0.25 }}>{posts[0].emoji}</div>
           </div>
         </div>
 
         {/* Grid */}
-        <div className="reveal" style={{ display: "grid", gridTemplateColumns: "repeat(3, 1fr)", gap: 20 }}>
+        <div className="reveal blog-grid" style={{ display: "grid", gridTemplateColumns: "repeat(3, 1fr)", gap: 20 }}>
           {posts.slice(1).map((p, i) => (
             <div key={i} className="card" onClick={() => setActivePost(p)} style={{ borderRadius: 16, padding: 26, cursor: "pointer" }}>
               <div style={{ fontSize: 28, marginBottom: 14, opacity: 0.6 }}>{p.emoji}</div>

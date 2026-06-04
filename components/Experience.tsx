@@ -106,9 +106,9 @@ export default function Experience() {
           </h2>
         </div>
 
-        <div className="reveal" style={{ display: "grid", gridTemplateColumns: "280px 1fr", gap: 32 }}>
+        <div className="reveal exp-grid" style={{ display: "grid", gridTemplateColumns: "280px 1fr", gap: 32 }}>
           {/* Sidebar */}
-          <div style={{ borderRight: "1px solid var(--border)", paddingRight: 32 }}>
+          <div className="exp-sidebar" style={{ borderRight: "1px solid var(--border)", paddingRight: 32 }}>
             {jobs.map((j, i) => (
               <button
                 key={i}

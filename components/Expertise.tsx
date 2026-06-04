@@ -84,7 +84,7 @@ export default function Expertise() {
                 <p style={{ fontSize: 13, color: "var(--text-muted)", marginTop: 2 }}>Core competency — 15+ years building and delivering B2B products</p>
               </div>
             </div>
-            <div style={{ display: "grid", gridTemplateColumns: "repeat(3, 1fr)", gap: "10px 32px" }}>
+            <div className="pm-skills-grid" style={{ display: "grid", gridTemplateColumns: "repeat(3, 1fr)", gap: "10px 32px" }}>
               {coreSkills.map((skill) => (
                 <div key={skill} style={{ display: "flex", alignItems: "flex-start", gap: 10 }}>
                   <div style={{ width: 6, height: 6, borderRadius: "50%", background: "var(--accent)", marginTop: 8, flexShrink: 0 }} />
@@ -98,7 +98,7 @@ export default function Expertise() {
         {/* Specialisms grid */}
         <div className="reveal" style={{ marginBottom: 56 }}>
           <h3 style={{ fontSize: 14, fontWeight: 600, letterSpacing: "0.08em", textTransform: "uppercase", color: "var(--text-muted)", marginBottom: 20 }}>Domain Specialisms</h3>
-          <div style={{ display: "grid", gridTemplateColumns: "repeat(3, 1fr)", gap: 18 }}>
+          <div className="specialism-grid" style={{ display: "grid", gridTemplateColumns: "repeat(3, 1fr)", gap: 18 }}>
             {specialisms.map((s) => (
               <div key={s.title} className="card" style={{ borderRadius: 14, padding: 24 }}>
                 <div style={{ display: "flex", alignItems: "center", gap: 10, marginBottom: 12 }}>
@@ -112,7 +112,7 @@ export default function Expertise() {
         </div>
 
         {/* Bottom: Certs + Tools + Languages */}
-        <div className="reveal" style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 32 }}>
+        <div className="reveal bottom-grid" style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 32 }}>
           <div>
             <h3 style={{ fontSize: 15, fontWeight: 700, color: "var(--text-primary)", marginBottom: 18 }}>Certifications</h3>
             <div style={{ display: "flex", flexDirection: "column", gap: 10 }}>

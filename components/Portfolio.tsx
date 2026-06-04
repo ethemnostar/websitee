@@ -76,7 +76,7 @@ export default function Portfolio() {
           </div>
         </div>
 
-        <div className="reveal" style={{ display: "grid", gridTemplateColumns: "repeat(3, 1fr)", gap: 24 }}>
+        <div className="reveal portfolio-grid" style={{ display: "grid", gridTemplateColumns: "repeat(3, 1fr)", gap: 24 }}>
           {projects.map((p, i) => (
             <div
               key={i}

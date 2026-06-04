@@ -164,3 +164,51 @@ body::after {
   .hide-mobile { display: none !important; }
   .show-mobile { display: flex !important; }
 }
+
+/* ── Mobile overrides ────────────────────────── */
+@media (max-width: 768px) {
+
+  /* Global section padding */
+  section { padding-left: 20px !important; padding-right: 20px !important; }
+
+  /* Hero */
+  #hero .hero-grid { grid-template-columns: 1fr !important; }
+  #hero .hero-card { display: none !important; }
+  #hero .hero-stats { gap: 24px !important; }
+  #hero .hero-stats > div { padding-right: 20px !important; margin-right: 20px !important; }
+
+  /* About */
+  #about .about-grid { grid-template-columns: 1fr !important; gap: 40px !important; }
+  #about .about-cards { grid-template-columns: 1fr 1fr !important; }
+
+  /* Experience */
+  #experience .exp-grid { grid-template-columns: 1fr !important; gap: 0 !important; }
+  #experience .exp-sidebar { border-right: none !important; border-bottom: 1px solid var(--border) !important; padding-right: 0 !important; padding-bottom: 16px !important; margin-bottom: 24px !important; display: flex !important; flex-wrap: wrap !important; gap: 8px !important; }
+  #experience .exp-sidebar button { width: auto !important; flex: 1 1 auto !important; min-width: 120px !important; }
+
+  /* Expertise */
+  #expertise .skills-grid { grid-template-columns: 1fr !important; }
+  #expertise .specialism-grid { grid-template-columns: 1fr 1fr !important; gap: 12px !important; }
+  #expertise .bottom-grid { grid-template-columns: 1fr !important; }
+  #expertise .pm-skills-grid { grid-template-columns: 1fr !important; }
+
+  /* Portfolio */
+  #portfolio .portfolio-grid { grid-template-columns: 1fr !important; }
+
+  /* Blog */
+  #blog .blog-featured { grid-template-columns: 1fr !important; }
+  #blog .blog-featured .blog-emoji { display: none !important; }
+  #blog .blog-grid { grid-template-columns: 1fr !important; }
+
+  /* Contact */
+  #contact .contact-grid { grid-template-columns: 1fr !important; gap: 24px !important; }
+  #contact .form-row { grid-template-columns: 1fr !important; }
+
+  /* Navbar padding */
+  nav { padding-left: 20px !important; padding-right: 20px !important; }
+}
+
+@media (max-width: 480px) {
+  #about .about-cards { grid-template-columns: 1fr !important; }
+  #expertise .specialism-grid { grid-template-columns: 1fr !important; }
+}
